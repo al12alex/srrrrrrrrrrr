@@ -1,0 +1,1102 @@
+><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mkau Inno Tech</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(to bottom, #FFFFE0, #90EE90, #FFE4E1, white);
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            overflow: hidden; /* Ensures the moving text doesn't cause horizontal scroll */
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 100%;
+            max-width: 400px; /* Reduced logo size */
+            margin-bottom: 10px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .logo-text {
+            font-size: 1.5em;
+            color: magenta;
+            margin: 10px 0;
+            white-space: nowrap;
+            position: relative;
+            animation: moveTextRightToLeft 15s linear infinite;
+        }
+
+        @keyframes moveTextRightToLeft {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .nav-container {
+            background-color: #2E8B57; /* Changed to green */
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #3CB371; /* Darker green on hover */
+        }
+
+        nav .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        nav .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            background-color: #2E8B57; /* Green background for dropdown */
+            color: white;
+        }
+
+        nav .dropdown-content a:hover {
+            background-color: #3CB371; /* Darker green on hover */
+        }
+
+        nav li:hover .dropdown-content {
+            display: block;
+        }
+
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2em;
+            cursor: pointer;
+            display: inline-block;
+            transition: color 0.3s;
+            padding: 0 20px;
+        }
+
+        .section h2:hover {
+            color: #2E8B57; /* Green color on hover */
+            text-decoration: underline;
+        }
+
+        .section .moving-text {
+            white-space: nowrap;
+            overflow: hidden;
+            animation: marquee 25s linear infinite;
+            color: green;
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .section button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            margin: 10px 5px;
+            border-radius: 4px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .section button:hover {
+            background-color: #3e8e41;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+
+        .form-container {
+            width: 350px;
+            margin: 20px auto;
+            text-align: left;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container label, .form-container input {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .form-container input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .detail-text {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        /* Full-width Image Sliders */
+        .full-slider {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+
+        .slider-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            animation: slideMove 30s infinite;
+        }
+
+        @keyframes slideMove {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-10%); }
+            50% { transform: translateX(-20%); }
+            75% { transform: translateX(-10%); }
+            100% { transform: translateX(0); }
+        }
+
+        .slider-image.active {
+            opacity: 1;
+        }
+
+        .slider-content {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+        }
+
+        /* Team Members */
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .team-member {
+            width: 250px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .team-member h3 {
+            cursor: pointer;
+            color: #2E8B57;
+            transition: color 0.3s;
+            margin: 10px 0;
+        }
+
+        .team-member h3:hover {
+            color: #3CB371;
+            text-decoration: underline;
+        }
+
+        /* Action Area Styles */
+        #action-area {
+            display: none;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .action-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .action-content h3 {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .profile-info img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .profile-details p {
+            margin: 5px 0;
+        }
+
+        .mau-info {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .mau-map {
+            flex: 1;
+        }
+
+        .mau-map iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .mau-details {
+            flex: 1;
+        }
+
+        .service-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .team-member-info {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav .dropdown-content {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+            }
+
+            .full-slider {
+                height: 300px;
+            }
+
+            .slider-content {
+                left: 20px;
+                bottom: 20px;
+                max-width: 80%;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .mau-info {
+                flex-direction: column;
+            }
+
+            .profile-info {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo-text {
+                font-size: 2em; /* Smaller text on mobile */
+                animation: moveTextRightToLeftMobile 10s linear infinite;
+            }
+
+            @keyframes moveTextRightToLeftMobile {
+                0% { transform: translateX(100%); }
+                100% { transform: translateX(-100%); }
+            }
+        }
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: #2E8B57;
+            margin-bottom: 15px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: #2E8B57;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .top-header {
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            height: 80px;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2E8B57;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .logo-sub-text {
+            font-size: 14px;
+            color: #666;
+            margin: 5px 0 0 0;
+            white-space: nowrap;
+        }
+        .section {
+                padding: 40px 15px;
+            }
+            .section {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2em;
+            cursor: pointer;
+            display: inline-block;
+            transition: color 0.3s;
+            padding: 0 20px;
+        }
+
+        .section h2:hover {
+            color: #2E8B57; /* Green color on hover */
+            text-decoration: underline;
+        }
+
+        .section .moving-text {
+            white-space: nowrap;
+            overflow: hidden;
+            animation: marquee 25s linear infinite;
+            color: green;
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .section button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            margin: 10px 5px;
+            border-radius: 4px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .section button:hover {
+            background-color: #3e8e41;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="https://www.mkau.edu.et/wp-content/uploads/2024/07/website-logo-2024.jpg" alt="MAU INNO TECH Logo">
+                </div>
+                <div class="logo-text">WELL COME TO MEKEDELA AMBA UNIVERSITY INNOVATION TECHENOLOGY WEBSITE
+            </div>
+        </div>
+    </header>
+<div class="nav-container">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="showAction('settings')">Settings</a>
+                        <a href="#" onclick="showAction('feedback')">Feedback</a>
+                        <a href="#" onclick="showAction('profile')">Profile</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#about">About Us</a>
+                    <div class="dropdown-content">
+                   <a href="https://www.mkau.edu.et/">About MAU</a>
+                        <a href="#developers">Developers Info</a>
+                        <a href="https://www.mkau.edu.et/wp-content/uploads/2025/03/l3.jpg">project maneger</a>
+                        </div>
+                </li>
+                <li>
+                    <a href="#services">Services</a>
+                    <div class="dropdown-content">
+                        <a href="#web-dev" onclick="showAction('webDev')">Web Development</a>
+                        <a href="#software-dev" onclick="showAction('softwareDev')">Software Development</a>
+                        <a href="#creativity" onclick="showAction('creativity')">Other Creativity</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#learning website">learning website</a>
+                    <div class="dropdown-content">
+                        <a href="#video-tutorials">Video</a>
+                        <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
+                        <a href="https://www.udemy.com/" target="_blank">Udemy</a>
+                        <a href="https://www.tpointtech.com/" target="_blank">JavaTPoint</a>
+                        <a href="https://www.udacity.com/" target="_blank">Udacity</a>
+                        <a href="https://www.freecodecamp.org/" target="_blank">FreeCodeCamp</a>
+                        <a href="https://graceacademy.net/" target="_blank">Greace Academy</a>
+                        <a href="https://www.mygreatlearning.com/" target="_blank">Great learning</a>
+                        
+                    </div>
+                </li>
+                <li>
+                    <a href="# amharictutorials">amharictutorials</a>
+                    <div class="dropdown-content">
+                       
+                        <a href="https://m.youtube.com/watch?v=2yvjr-1Lmto&t=0s" target="_blank">DG Tech</a>
+                        <a href="https://www.youtube.com/watch?v=F-F3oimL6uI" target="_blank">Ethio programing</a>
+                        <a href="https://www.youtube.com/c/ETTechAmharic/channels" target="_blank">ETtech</a>
+                        <a href="https://www.youtube.com/watch?v=kDE31AmaIAM" target="_blank">Emmersive learning</a>
+                        <a href="https://www.youtube.com/watch?v=kXdqjM0o5kM/" target="_blank">TG tech</a>
+                        
+                    </div>
+                </li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="section" id="about">
+        <h2 onclick="scrollToSection('about')">About Our Website</h2>
+        <div class="full-slider">
+            <img src=" <a href="https://www.mkau.edu.et/wp-content/uploads/2025/03/l3.jpg"></a>" alt="">
+                            <div class="slider-content">
+                    <h3>Innovation Hub</h3>
+                    <p>Discover our state-of-the-art facilities designed to foster creativity and technological advancement.</p>
+                </div>
+            </div>
+            <div class="slider-image" style="background-image:  <a href="https://www.mkau.edu.et/wp-content/uploads/2025/03/l3.jpg">project maneger</a>
+                <div class="slider-content">
+                    <h3>Collaborative Environment</h3>
+                    <p>Work with like-minded individuals in our modern collaborative spaces.</p>
+                </div>
+            </div>
+            <div class="slider-image" style="background-image: url('file:///C:/Users/Digital%202/Desktop/bre.jpg')">
+                <div class="slider-content">
+                    <h3>Cutting-Edge Technology</h3>
+                    <p>Access the latest tools and resources for your projects.</p>
+                </div>
+            </div>
+        </div>
+        <div class="moving-text">Welcome to MAU INNO TECH - Your gateway to innovation and technology!</div>
+        <button onclick="showDetails('about-details')">See Details</button>
+        <div id="about-details" class="detail-text">
+            <p>MAU INNO TECH is a platform dedicated to fostering innovation and technological advancement. Our website serves as a hub for students, developers, and tech enthusiasts to learn, collaborate, and create. We provide resources, tutorials, and tools to help you grow your technical skills and bring your ideas to life.</p>
+            <p>Our mission is to bridge the gap between academic learning and practical application by providing hands-on experience with real-world projects. Whether you're a beginner or an experienced developer, you'll find valuable resources to enhance your skills.</p>
+            <p>The platform offers:</p>
+            <ul>
+                <li>Comprehensive learning resources</li>
+                <li>Project-based learning opportunities</li>
+                <li>Community collaboration spaces</li>
+                <li>Mentorship programs</li>
+                <li>Innovation challenges</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section" id="developers">
+        <h2 onclick="scrollToSection('developers')">Developers Section</h2>
+        <div class="full-slider">
+            <div class="slider-image active" style="background-image: url('file:///C:/Users/Digital%202/Desktop/im1.jpg')">
+                <div class="slider-content">
+                    <h3>Web Development</h3>
+                    <p>Learn modern web technologies and frameworks.</p>
+                </div>
+            </div>
+            <div class="slider-image" style="background-image: url('file:///C:/Users/Digital%202/Desktop/download2.jpg')">
+                <div class="slider-content">
+                    <h3>Software Engineering</h3>
+                    <p>Master software development principles and practices.</p>
+                </div>
+            </div>
+            <div class="slider-image" style="background-image: url('file:///C:/Users/Digital%202/Desktop/bre.jpg')">
+                <div class="slider-content">
+                    <h3>Mobile Development</h3>
+                    <p>Build cross-platform mobile applications.</p>
+                </div>
+            </div>
+        </div>
+        <button onclick="showDetails('developers-details')">See Details</button>
+        <div id="developers-details" class="detail-text">
+            <p>Our developers section is dedicated to providing resources and tools for software developers of all levels. We offer:</p>
+            <ul>
+                <li>Comprehensive coding tutorials covering various programming languages and frameworks</li>
+                <li>Project ideas and templates for practical learning</li>
+                <li>Code snippets and examples for quick reference</li>
+                <li>Development tools and frameworks documentation</li>
+                <li>Community support and collaboration opportunities</li>
+                <li>Regular coding challenges and hackathons</li>
+            </ul>
+            <p>Whether you're working on web development, mobile apps, or software engineering projects, you'll find valuable resources to accelerate your development process. Our platform supports learning paths for:</p>
+            <ul>
+                <li>Front-end development (HTML, CSS, JavaScript, React, Angular)</li>
+                <li>Back-end development (Node.js, Python, Java, PHP)</li>
+                <li>Mobile development (React Native, Flutter)</li>
+                <li>Database management (SQL, MongoDB)</li>
+                <li>DevOps and deployment strategies</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section" id="team">
+        <h2 onclick="scrollToSection('team')">Our Team Members</h2>
+        <div class="full-slider">
+            <div class="slider-image active" style="background-image: url('file:///C:/Users/Digital%202/Desktop/download2.jpg')">
+                <div class="slider-content">
+                    <h3>Our Leadership</h3>
+                    <p>Meet the team driving our innovation initiatives.</p>
+                </div>
+            </div>
+            <div class="slider-image" style="background-image: url('file:///C:/Users/Digital%202/Desktop/im1.jpg')">
+                <div class="slider-content">
+                    <h3>Development Team</h3>
+                    <p>The experts behind our technical solutions.</p>
+                </div>
+            </div>
+            <div class="slider-image" style="background-image: url('file:///C:/Users/Digital%202/Desktop/bre.jpg')">
+                <div class="slider-content">
+                    <h3>Support Staff</h3>
+                    <p>Dedicated professionals ensuring smooth operations.</p>
+                </div>
+            </div>
+        </div>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="file:///C:/Users/Digital%202/Desktop/download2.jpg" alt="Team Member 1">
+                <h3 onclick="showTeamMember('john')">ALEMAYEHU TEKALIGN</h3>
+                <p> WEBSITE Developer</p>
+                <p>Department: Computer Science</p>
+                <p>Phone: 0902698523</p>
+            </div>
+            <div class="team-member">
+                <img src="file:///C:/Users/Digital%202/Desktop/im1.jpg" alt="Team Member 2">
+                <h3 onclick="showTeamMember('jane')">Alemayehu</h3>
+                <p>Back end developer</p>
+                <p>Department: computer Science</p>
+                <p>Phone: 0979622099</p>
+            </div>
+            <div class="team-member">
+                <img src="file:///C:/Users/Digital%202/Desktop/bre.jpg" alt="Team Member 3">
+                <h3 onclick="showTeamMember('mike')">Berhanu</h3>
+                <p>Project Manager</p>
+                <p>Department: Information Technology</p>
+                <p>Phone: 0911223344</p>
+            </div>
+        </div>
+        <button onclick="showDetails('team-details')">See Details</button>
+        <div id="team-details" class="detail-text">
+            <p>Our team consists of passionate professionals dedicated to creating the best learning and development experience for our users. Each member brings unique skills and expertise to the table, ensuring we deliver high-quality content and services.</p>
+            <p>We believe in collaboration, continuous learning, and innovation. Our team works together to create resources that are practical, up-to-date, and relevant to today's technology landscape.</p>
+            
+            <div id="Alemayehu-info" class="team-member-info">
+                <h3>Alemayehu - front end Developer</h3>
+                <div class="profile-info">
+                    <img src="file:///C:/Users/Digital%202/Desktop/download2.jpg" alt="Lead Developer">
+                    <div class="profile-details">
+                        <p><strong>Department:</strong> Computer Science</p>
+                        <p><strong>Contact:</strong> 0902698523</p>
+                        <p><strong>Email:</strong> alemayehutekalign13@gmail.com</p>
+                        <p><strong>Expertise:</strong> Front-end development, </p>
+                        <p><strong>Bio:</strong> With over 1 years of experience in  front end developmentt, alemayehu leads our technical team in creating innovative solutions. He specializes in JavaScript frameworks and cloud architecture.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="ALEMAYEHU-info" class="team-member-info">
+                <h3>Alemayehu Tekalign - BACK END DEVELOPER</h3>
+                <div class="profile-info">
+                    <img src="file:///C:/Users/Digital%202/Desktop/im1.jpg" alt="UI/UX Designer">
+                    <div class="profile-details">
+                        <p><strong>Department:</strong> computer Science</p>
+                        <p><strong>Contact:</strong> 0979622099</p>
+                        <p><strong>Email:</strong> alemayehutekalign13@gmail.com</p>
+                        <p><strong>Expertise:</strong> User Interface Design, User Experience Research</p>
+                        <p><strong>Bio:</strong> Jane specializes in creating intuitive and engaging user interfaces that enhance the learning experience. She has worked with major tech companies before joining our team.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="Berhanu-info" class="team-member-info">
+                <h3>Berhanu - Project Manager</h3>
+                <div class="profile-info">
+                    <img src="file:///C:/Users/Digital%202/Desktop/bre.jpg" alt="Project Manager">
+                    <div class="profile-details">
+                        <p><strong>Department:</strong> Information Technology</p>
+                        <p><strong>Contact:</strong> 0911223344</p>
+                        <p><strong>Email:</strong> mike.johnson@mkauinno.tech</p>
+                        <p><strong>Expertise:</strong> Agile Methodologies, Team Leadership</p>
+                        <p><strong>Bio:</strong> Mike ensures all projects are delivered on time and meet quality standards. He has a background in both technical development and business management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="section" id="register">
+        <h2>Register</h2>
+        <div class="form-container">
+            <form id="registerForm" onsubmit="return validateRegister()">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <label for="department">Department:</label>
+                <select id="department" name="department">
+                    <option value="cs">CS</option>
+                    <option value="se">SE</option>
+                    <option value="it">IT</option>
+                    <option value="other">Other</option>
+                </select>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="section" id="login">
+        <h2>Login</h2>
+        <div class="form-container">
+            <form id="loginForm" onsubmit="return validateLogin()">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="email" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+
+    
+            <div class="location-details">
+                <h3>Contact Information</h3>
+                <div class="contact-info">
+                    <p><strong>Address:</strong> Mekedela, Amba Region, Ethiopia</p>
+                    <p><strong>Phone:</strong> +251 123 456 789</p>
+                    <p><strong>Email:</strong> info@mau.edu.et</p>
+                    <p><strong>Website:</strong> www.mau.edu.et</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#team">Team Members</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#register">Register</a></li>
+                        <li><a href="#login">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
+                        <li><a href="https://www.udemy.com/" target="_blank">Udemy</a></li>
+                        <li><a href="https://www.freecodecamp.org/" target="_blank">FreeCodeCamp</a></li>
+                        <li><a href="https://www.udacity.com/" target="_blank">Udacity</a></li>
+                        <li><a href="https://graceacademy.net/" target="_blank">Greace Academy</a></li>
+                        <li><a href="https://www.mygreatlearning.com/" target="_blank">Great learning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: info@mkauinno.tech</li>
+                        <li>Phone: +125 902698523</li>
+                        <li>Address: Mekedela Amba University</li>
+                        <li>Computer Science Department</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/" class="fa fa-facebook" target="_blank"></a>
+                        <a href="https://twitter.com/" class="fa fa-twitter" target="_blank"></a>
+                        <a href="https://www.instagram.com/" class="fa fa-instagram" target="_blank"></a>
+                        <a href="https://www.linkedin.com/" class="fa fa-linkedin" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+            <p>&copy; 2017 E.C  MAU INNO TECH CREATED BY ALEMAYEHU TEKALIGN . All rights reserved.</p>
+        </footer>
+    
+        
+        
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        // Slider functionality
+        const sliders = {
+            'about': { current: 0, total: 3 },
+            'developers': { current: 0, total: 3 },
+            'team': { current: 0, total: 3 }
+        };
+
+        function showSlide(sliderId, index) {
+            const slider = document.querySelector(`#${sliderId} .full-slider`);
+            const slides = slider.querySelectorAll('.slider-image');
+            const data = sliders[sliderId];
+            
+            data.current = (index + data.total) % data.total;
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === data.current);
+            });
+        }
+
+        function nextImageSlider(sliderId) {
+            showSlide(sliderId, sliders[sliderId].current + 1);
+        }
+
+        function prevImageSlider(sliderId) {
+            showSlide(sliderId, sliders[sliderId].current - 1);
+        }
+
+        // Auto slide change every 5 seconds for all sliders
+        setInterval(() => {
+            for (const sliderId in sliders) {
+                nextImageSlider(sliderId);
+            }
+        }, 5000);
+
+        function showDetails(detailId) {
+            const detailText = document.getElementById(detailId);
+            if (detailText.style.display === 'none' || detailText.style.display === '') {
+                detailText.style.display = 'block';
+            } else {
+                detailText.style.display = 'none';
+            }
+        }
+        
+        function showAction(actionId){
+            const actionArea = document.getElementById("action-area");
+            actionArea.style.display = "block";
+            const allContents = actionArea.querySelectorAll('.action-content');
+            allContents.forEach(content => {
+                content.style.display = "none";
+            });
+            
+            const actionContent = document.getElementById(actionId+"-content");
+            if (actionContent) {
+                actionContent.style.display = "block";
+            }
+        }
+
+        function validateRegister() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (!email || !password) {
+                alert('Please fill in all fields');
+                return false;
+            }
+            
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters');
+                return false;
+            }
+            
+            alert('Registration successful!');
+            return true;
+        }
+
+        function validateLogin() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            if (!email || !password) {
+                alert('Please fill in all fields');
+                return false;
+            }
+            
+            alert('Login successful!');
+            return true;
+        }
+
+        // Scroll to section when clicking on section titles
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Show team member information when clicking their name
+        function showTeamMember(memberId) {
+            // Hide all team member info first
+            document.querySelectorAll('.team-member-info').forEach(info => {
+                info.style.display = 'none';
+            });
+            
+            // Show the details section if it's hidden
+            const detailsSection = document.getElementById('team-details');
+            if (detailsSection.style.display === 'none') {
+                detailsSection.style.display = 'block';
+            }
+            
+            // Show the selected member's info
+            const memberInfo = document.getElementById(memberId + '-info');
+            if (memberInfo) {
+                memberInfo.style.display = 'block';
+                memberInfo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        // Initialize sliders
+        document.addEventListener('DOMContentLoaded', function() {
+            for (const sliderId in sliders) {
+                showSlide(sliderId, 0);
+            }
+        });
+    </script>
+</body>
+</html>
